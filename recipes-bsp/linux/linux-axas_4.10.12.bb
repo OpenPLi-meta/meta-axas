@@ -32,6 +32,7 @@ SRC_URI_append_arm = " \
 	file://reserve_dvb_adapter_0.patch \
 	file://blacklist_mmc0.patch \
 	file://initramfs-subdirboot.cpio.gz;unpack=0 \
+	file://make-yyloc-declaration-extern.patch \
 	"
 
 S = "${WORKDIR}/linux-${PV}"
