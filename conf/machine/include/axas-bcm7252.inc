@@ -13,18 +13,18 @@ PREFERRED_PROVIDER_virtual/libgles2 ?= "axas-libgles-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 
-require conf/machine/include/tune-cortexa15.inc
+require conf/machine/include/arm/armv7a/tune-cortexa15.inc
 require conf/machine/include/axas-essential.inc
 
-PACKAGECONFIG_GL_pn-qtbase = " "
-PACKAGECONFIG_append_pn-qtbase += " gles2 linuxfb"
+PACKAGECONFIG_GL:pn-qtbase = " "
+PACKAGECONFIG:append:pn-qtbase += " gles2 linuxfb"
 
 MACHINE_EXTRA_RRECOMMENDS = " \
 	gst-plugin-dvbmediasink \
 	ntfs-3g \
 	"
 
-DVBMEDIASINK_CONFIG += " --with-h265 --with-vb8 --with-vb9 --with-opus --with-wma --with-wmv --with-pcm --with-dts --with-eac3"
+DVBMEDIASINK_CONFIG += " --with-h265 --with-vb8 --with-vb9 --with-wma --with-wmv --with-pcm --with-dts --with-eac3"
 
 MACHINE_FEATURES += " alsa usbhost wlan 3dtv switchoff osdposition"
 
@@ -33,7 +33,7 @@ IMAGEVERSION[vardepsexclude] = "DATE"
 IMAGEDIR ?= "${MACHINE}"
 IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"
 
-IMAGE_CMD_axasemmc_append = "\
+IMAGE_CMD:axasemmc:append = "\
 	mkdir -p ${IMGDEPLOYDIR}/${IMAGEDIR}; \
 	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}.emmc.img ${IMGDEPLOYDIR}/${IMAGEDIR}/disk.img; \
 	echo "${IMAGEVERSION}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
@@ -46,6 +46,6 @@ IMAGE_CMD_axasemmc_append = "\
 	rm -Rf ${IMAGEDIR}; \
 	"
 
-IMAGE_CMD_prepend = " \
+IMAGE_CMD:prepend = " \
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	"
