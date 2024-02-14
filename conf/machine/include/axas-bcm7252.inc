@@ -17,7 +17,7 @@ require conf/machine/include/arm/armv7a/tune-cortexa15.inc
 require conf/machine/include/axas-essential.inc
 
 PACKAGECONFIG_GL:pn-qtbase = " "
-PACKAGECONFIG:append:pn-qtbase += " gles2 linuxfb"
+PACKAGECONFIG:append:pn-qtbase = " gles2 linuxfb"
 
 MACHINE_EXTRA_RRECOMMENDS = " \
 	gst-plugin-dvbmediasink \
