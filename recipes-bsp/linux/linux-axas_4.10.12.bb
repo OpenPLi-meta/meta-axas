@@ -33,6 +33,7 @@ SRC_URI:append:arm = " \
 	file://blacklist_mmc0.patch \
 	file://initramfs-subdirboot.cpio.gz;unpack=0 \
 	file://make-yyloc-declaration-extern.patch \
+	file://fix-build-with-binutils-2.41-kernel41012.patch \
 	"
 
 S = "${WORKDIR}/linux-${PV}"
