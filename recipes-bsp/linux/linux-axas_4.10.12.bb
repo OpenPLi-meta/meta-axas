@@ -20,7 +20,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad
 RPROVIDES:${KERNEL_PACKAGE_NAME}-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES:${KERNEL_PACKAGE_NAME}-image = "kernel-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://121.143.3.35/e4hd/linux/linux-${PV}-${ARCH}.tar.gz;name=${ARCH} \
+SRC_URI += "http://downloads.openpli.org/archive/axas/linux-${PV}-${ARCH}.tar.gz;name=${ARCH} \
 	file://defconfig \
 	"
 
